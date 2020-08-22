@@ -1,0 +1,44 @@
+=> is the separator for associative arrays. In the context of that foreach loop, it assigns the key of the array to $user and the value to $pass.
+
+Example:
+
+$user_list = array(
+    'dave' => 'apassword',
+    'steve' => 'secr3t'
+);
+
+foreach ($user_list as $user => $pass) {
+    echo "{$user}'s pass is: {$pass}\n";
+}
+// Prints: 
+// "dave's pass is: apassword"
+// "steve's pass is: secr3t"
+
+in case you have a table instead of an array you have to specify the line you are using 
+by using {$pass->line}
+
+
+you have to use php artisan storage:link to link the file you uploaded from your database
+
+laravel notify is important if you want to notify users after an action causing a change of page is made.
+
+if the browser tells you a file doesnt exist, check for the spelling at the different level where you used( mostly the web.php)
+
+if you want to paste the elements you have in your database, youll have to deal with the page's controller in order to retrieve data from the model you created and let you show it. take a look at "bouba/resources/views/admin/category/index" and then categorycontroller in "app/http/controller"
+
+enctype="multipart/form-data" is used in a form when we are uploading a file 
+
+to save migration in the database you use php artisan migrate but if you already did this you got two options
+1 you can use php artisan migrate:fresh which will only run through the up method or 
+2 you use php artisan migrate:refresh whick will run both up and down method, so it all depends on you
+ but also remember that both procedure will completely erase all the data in your data base
+
+ Use PUT when you want to modify a singular resource which is already a part of resources collection. PUT replaces the resource in its entirety. Use PATCH if request updates part of the resource. Use POST when you want to add a child resource under resources collection
+
+ validate is just used to put some conditions on the form, that's all.
+
+ Since you already have data in your tables then instead of rolling back your migrations (which will cause existing data losses) you can create new migration files to update your tables. Suppose you have a table users with columns name, email, password. You stored data in that table. Then you realized that you also do need to add a new column named mobile_no to your users table. To do this you need to create a new migration file. Command will be:
+
+php artisan make:migration add_mobile_no_columns_to_users_table --table=users
+
+This way a new migration file will be created. Set your column details there, run the migrations using php artisan migrate and that's all. You'll have this new column in your users table without losing previously stored data.
