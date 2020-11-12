@@ -2,18 +2,30 @@
 
 @section('content')
 <div class="container">
-	<main role="main">
+    <main role="main">
 
-	  <section class="jumbotron text-center">
 	    <div class="container">
-	      <h1>Album example</h1>
-	      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-	      <p>
-	        <a href="#" class="btn btn-primary my-2">Main call to action</a>
-	        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-	      </p>
-	    </div>
-	  </section>
+	      	<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+				    @if(count($sliders)>0)
+				    	@foreach($sliders as $key=> $slider)
+
+				    		<div class="carousel-item {{$key == 0 ? 'active' : ''}} ">
+						      <img src="{{Storage::url($slider->image)}}" >
+						    </div>
+						@endforeach
+				    @endif
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+			    	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    	<span class="sr-only">Previous</span>
+	    		</a>
+			    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
 	  <h2>Category</h2>
 		@foreach(App\Category::all() as $cat)
 			<a href="{{route('product.list',[$cat->slug])}}"><button class="btn btn-secondary">{{$cat->name}}</button></a>
@@ -49,7 +61,9 @@
 	        @endif
 	      	</div>
 	    </div>
+	    <center><a href="{{route('more.product')}}"><button type="button" class="btn btn-success">More Products</button></a></center>
 	  </div>
+
 	  <h1>Carousel</h1>
 
 <div class="jumbotron">
@@ -136,5 +150,13 @@
 	</div>
    </div>
   </main>
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+  </div>
+</footer>
 </div>
 @endsection

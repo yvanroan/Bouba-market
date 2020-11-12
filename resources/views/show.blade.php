@@ -46,7 +46,7 @@
 								<input id="quantity_input" type="number"  value="1">
 								<!- ca accepte les tirets faut changer ca ->
 							</button> -->
-							<a href="#" class="btn btn-sm btn-outline-primary text-uppercase">Add to cart</a>
+							<a href="{{route('add.cart')}}" class="btn btn-sm btn-outline-primary text-uppercase">Add to cart</a>
 						</div>
 						<hr>
 						<!-- Share -->

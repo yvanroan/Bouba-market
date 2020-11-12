@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 use App\Subcategory;
+use App\Slider;
 
 class FrontProductListController extends Controller
 {
@@ -20,7 +21,9 @@ class FrontProductListController extends Controller
     	}
     	$randomItemProduct = Product::whereNotIn('id', $randomActiveProductIds)->limit(3)->get();
     	//gets products which ids are not in the randomActiveProductIds
-    	return view('product', compact('products', 'randomActiveProduct', 'randomItemProduct'));
+        $sliders = Slider::get();
+
+    	return view('product', compact('products','randomActiveProduct','randomItemProduct','sliders'));
     }
 
     public function show($id){
@@ -87,5 +90,20 @@ class FrontProductListController extends Controller
     	return $products;
     }
 
+    public function moreProducts(Request $request){
+        if($request->search){
+            $products = Product::where('name','like','%'.$request->search.'%')
+            ->orWhere('description','like','%'.$request->search.'%')
+            ->orWhere('additional_info','like','%'.$request->search.'%')
+            ->paginate(5);
+
+        }
+        else{
+            $products = Product::latest()->paginate(5);
+        }
+
+       
+        return view('all-product', compact('products'));
+    }
 
 }

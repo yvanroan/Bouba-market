@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Cart;
+use Cartalyst\Stripe\Laravel\Facades\Stripe;
+use App\Mail\Sendmail;
 
 class CartController extends Controller
 {
@@ -64,6 +66,56 @@ class CartController extends Controller
     	}
 
     	public function checkout($amount){
-    		return view('checkout', compact('amount'));
+    		if(session()->has('cart')){
+    			$cart = new Cart(session()->get('cart'));
+    		}
+    		else{
+    			$cart = null;
+    		}
+    		return view('checkout', compact('amount','cart'));
     	}
+
+    	public function charge(Request $request){
+    		$charge = Stripe::charges()->create([
+	            'currency'=>"USD",
+	            'source'=>$request->stripeToken,
+	            'amount'=>$request->amount,
+	            'description'=>'Test'
+	        ]);
+
+	        $chargeId = $charge['id'];
+
+	        if(session()->has('cart')){
+    			$cart = new Cart(session()->get('cart'));
+    		}
+    		else{
+    			$cart = null;
+    		}
+    		\Mail::to(auth()->user()->email)->send(new Sendmail($cart));
+
+	        if($chargeId){
+	            auth()->user()->orders()->create([
+
+	                'cart'=>serialize(session()->get('cart'))
+				// the line above is basically taking what is in the cart using session and get to put it in the cart attribute of order through serialization
+	            ]);
+
+	            session()->forget('cart');
+	            //we then forget the cart because the transaction is completed
+	            notify()->success(' Transaction completed!');
+	            return redirect()->to('/');
+
+	        }else{
+	            return redirect()->back();
+	        }
+    	}
+
+    	public function order(){
+    		$orders = auth()->user()->orders;
+    		$carts = $orders->transform(function($cart,$key){
+    			unserialize($cart->cart);
+    		});
+    		return view('order', compact('cart'));
+    	}
+
 }

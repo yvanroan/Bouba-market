@@ -79,16 +79,6 @@ class DatabaseSeeder extends Seeder
         		'subcategory_id'=>1
         ]);
 
-        Product::create([
-        		'name'=>'Naruto',
-        		'image'=>'product/Naruto.jpeg',
-        		'price'=>rand(35,45),
-        		'description'=>'The story of a young orphan who will become the greatest shinobi of its time',
-        		'additional_info'=>'the protagonist are Naruto Uzumaki and Sasuke Uchiha',
-        		'category_id'=>1,
-        		'subcategory_id'=>1
-        ]);
-
         User::create([
         		'name'=>'Yvanroan',
         		'email'=>'yvanroan@admin.com',

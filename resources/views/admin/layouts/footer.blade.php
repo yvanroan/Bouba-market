@@ -1,11 +1,5 @@
 <footer class="sticky-footer bg-white">
-  <div class="container my-auto">
-    <div class="copyright text-center my-auto">
-      <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-        <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
-      </span>
-    </div>
-  </div>
+  I'll do it later, Ill just put my github here
 </footer>
   <script src="{{asset('admin/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

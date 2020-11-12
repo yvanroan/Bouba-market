@@ -1,9 +1,9 @@
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="{{asset('admin/img/logo/logo2.png')}}">
+          <img src="{{asset('admin/img/logo/logo.jpg')}}">
         </div>
-        <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+        <div class="sidebar-brand-text mx-3">Bouba-Market</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
@@ -19,13 +19,13 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">
           <i class="far fa-fw fa-window-maximize"></i>
-          <span>Category</span>
+          <span>Categories</span>
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Category</h6>
-            <a class="collapse-item" href="{{route('category.index')}}">View</a>
-            <a class="collapse-item" href="{{route('category.create')}}">Create</a>
+            <h6 class="collapse-header">Categories</h6>
+            <a class="collapse-item" href="{{route('categories.index')}}">View</a>
+            <a class="collapse-item" href="{{route('categories.create')}}">Create</a>
           </div>
         </div>
       </li>
@@ -34,13 +34,13 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
           <i class="fab fa-fw fa-wpforms"></i>
-          <span>Subcategory</span>
+          <span>Subcategories</span>
         </a>
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Subcategory</h6>
-             <a class="collapse-item" href="{{route('subcategory.index')}}">View</a>
-             <a class="collapse-item" href="{{route('subcategory.create')}}">Create</a>
+            <h6 class="collapse-header">Subcategories</h6>
+             <a class="collapse-item" href="{{route('subcategories.index')}}">View</a>
+             <a class="collapse-item" href="{{route('subcategories.create')}}">Create</a>
           </div>
         </div>
       </li>
@@ -48,17 +48,44 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap1"
           aria-expanded="true" aria-controls="collapseBootstrap">
           <i class="far fa-fw fa-window-maximize"></i>
-          <span>Product</span>
+          <span>Products</span>
         </a>
         <div id="collapseBootstrap1" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Product</h6>
-            <a class="collapse-item" href="{{route('product.index')}}">View</a>
-            <a class="collapse-item" href="{{route('product.create')}}">Create</a>
+            <h6 class="collapse-header">Products</h6>
+            <a class="collapse-item" href="{{route('products.index')}}">View</a>
+            <a class="collapse-item" href="{{route('products.create')}}">Create</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm2" aria-expanded="true"
+          aria-controls="collapseForm">
+          <i class="fab fa-fw fa-wpforms"></i>
+          <span>Sliders</span>
+        </a>
+        <div id="collapseForm2" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Sliders</h6>
+             <a class="collapse-item" href="{{route('slider.index')}}">View</a>
+             <a class="collapse-item" href="{{route('slider.create')}}">Create</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm3" aria-expanded="true"
+          aria-controls="collapseForm">
+          <i class="fab fa-fw fa-wpforms"></i>
+          <span>Users</span>
+        </a>
+        <div id="collapseForm3" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Users</h6>
+             <a class="collapse-item" href="{{route('user.index')}}">View</a>
+          </div>
+        </div>
+      </li>
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">
           <i class="fas fa-fw fa-table"></i>
@@ -77,8 +104,9 @@
           <i class="fas fa-fw fa-palette"></i>
           <span>UI Colors</span>
         </a>
-      </li>
+      </li> -->
       <hr class="sidebar-divider">
+      <!-- 
       <div class="sidebar-heading">
         Examples
       </div>
@@ -97,7 +125,7 @@
             <a class="collapse-item" href="blank.html">Blank Page</a>
           </div>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item">
           <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

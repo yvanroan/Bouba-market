@@ -8,12 +8,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="{{asset('admin/img/logo/logo.png')}}" rel="icon">
-  <title>RuangAdmin - Dashboard</title>
+  <title>Bouba-Market - Dashboard</title>
   <link href="{{asset('admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('admin/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('admin/css/ruang-admin.min.css')}}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
-  <link href="{{ mix('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
+  
 
 
 </head>
