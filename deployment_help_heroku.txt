@@ -1,0 +1,7 @@
+start with this one and stop just before the database. the other one is easier to understand
+
+https://betterprogramming.pub/hosting-your-laravel-app-on-heroku-198764167a85
+
+continue with the database setup Here
+
+https://dev.to/jsf00/deploy-laravel-application-with-database-to-heroku-l50
