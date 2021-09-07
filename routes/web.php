@@ -55,3 +55,5 @@ Auth::routes();
 Route::get('subcategories/{id}', 'ProductController@loadSubcategories');
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+URL::forceScheme('https');
