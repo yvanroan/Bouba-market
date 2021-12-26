@@ -12,13 +12,13 @@
             <!--foreach subcategories-->
               @foreach($subcategories as $subcat)
               <p><input type="checkbox" name="subcategory[]" value="{{$subcat->id}}"
-                
+
               @if(isset($filtersubcategories))
-                {{in_array($subcat->id,$filtersubcategories)?'checked = "checked" ':''}}     
+                {{in_array($subcat->id,$filtersubcategories)?'checked = "checked" ':''}}
               @endif
 
                 >{{$subcat->name}}</p>
-                
+
               @endforeach
            <!--end foreach-->
           <input type="submit" value="Filter" class="btn btn-success">
@@ -32,7 +32,7 @@
             <br>
              <input type="text" name="max" class="form-control" placeholder="maximum price" required=""  >
              <input type="hidden" name="categoryId" value="{{$categoryId}}">
-             
+
              <br>
              <br>
             <input type="submit" value="Filter" class="btn btn-secondary">
@@ -41,9 +41,9 @@
 
         <hr>
        <a href="{{route('product.list',[$slug])}}">Back</a>
-       
+
       </div>
-       
+
       <div class="col-md-10">
         <div class="row">
       <!--foreach products-->
@@ -60,7 +60,7 @@
                   <div class="btn-group">
                    <a href="{{route('product.show',[$prod->id])}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button>
                    </a>
-                    <a href="{{route('add.cart',[$product->id])}}"><button type="button" class="btn btn-sm btn-outline-primary">Add to Cart</button></a>
+                    <a href="{{route('add.cart',[$prod->id])}}"><button type="button" class="btn btn-sm btn-outline-primary">Add to Cart</button></a>
                   </div>
                   <small class="text-muted">${{$prod->price}}</small>
                 </div>
@@ -73,7 +73,7 @@
     </div>
   </div>
 </div>
-      
-  
+
+
 
 @endsection
