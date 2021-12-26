@@ -1,3 +1,5 @@
+<p>This project is based on the e-commerce app on the udemy course "laravel masterclass: build web apps with laravel 7, php and Vue.js"</p>
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
